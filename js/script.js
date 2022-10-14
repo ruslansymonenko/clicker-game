@@ -1,5 +1,5 @@
-
+import {choosePlayer} from './modules/choosePlayer.js'
 
 window.addEventListener('DOMContentLoaded', () => {
-    console.log('yes');
+    choosePlayer();
 })
