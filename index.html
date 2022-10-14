@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker</title>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="app">
+            <!-- header -->
+
+            <header class="app_header">
+                <div class="result_area">
+                    <p class="result_header">Current result</p>
+                    <p class="current_result">20</p>
+                </div>
+                <img src="./logo.png" alt="" class="app_name">
+                <div class="result_area">
+                    <p class="result_header">Max result</p>
+                    <p class="max_result">Player1: 30</p>
+                </div>
+            </header>
+
+            <!-- main -->
+
+            <main class="app_main">
+                <div class="game_area"></div>
+            </main>
+
+
+            <!-- footer -->
+
+            <footer class="app_footer">
+                <div class="footer_container">
+                    <button class="play_btn btn">Play</button>
+                    <button class="change_player_btn btn">Change player</button>
+                    <div class="current_player"><span id="currentPlayer"> Player 1</span></div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="./js/script.js" type="module"></script>
+</body>
+</html>
