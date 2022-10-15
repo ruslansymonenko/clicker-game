@@ -1,5 +1,6 @@
 export function gameTimer () {
     const footerContainers = document.querySelectorAll('.footer_container');
+    const timeContainer = document.querySelector('.time');
 
     function showTimer () {
         footerContainers.forEach(el => {
@@ -22,4 +23,14 @@ export function gameTimer () {
     };
 
     showTimer();
+    let timer = setInterval(() => {
+        let time = parseFloat(timeContainer.textContent);
+        
+        if (time < 0) {
+            clearInterval(timer);
+            hideTimer();
+        } else {
+            timeContainer.textContent = (time - 0.1).toFixed(1);
+        }
+    }, 100);
 }
