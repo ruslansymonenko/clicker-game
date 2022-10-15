@@ -1,5 +1,5 @@
 export function choosePlayer () {
-    const changePlayerBtn = document.querySelector('.choose_player_btn');
+    const playerNamePlaceHolder = document.querySelector('#currentPlayer');
     let currentPlayer;
 
     const players = [
@@ -9,25 +9,37 @@ export function choosePlayer () {
         }
     ];
 
+    function checkName (playerName) {
+        if (playerName === 'No player') {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     function checkPlayer (playersArr) {
         let name;
 
         if (confirm('Are you first time playing?')) {
             name = prompt('Please, write your name', []);
-            let newPlayer = {
-                playerName: name,
-                playerMaxResult: 0
+
+            if (checkName(name) === true) {
+                let newPlayer = {
+                    playerName: name,
+                    playerMaxResult: 0
+                }
+                console.log(newPlayer);
+                playerNamePlaceHolder.textContent = newPlayer.playerName;
+                playersArr.push(newPlayer);
+            } else {
+                alert ('This name not suitable')
             }
-            console.log(newPlayer);
-            playersArr.push(newPlayer);
         } else {
             name = prompt('Please, write your name', []);
         }
     }
 
 
-    changePlayerBtn.addEventListener('click', () => {
-        checkPlayer(players);
-        console.log(players);
-    })
+    checkPlayer (players);
+
 }
