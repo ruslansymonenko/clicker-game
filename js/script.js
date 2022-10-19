@@ -1,5 +1,5 @@
 import {checkPlayer} from './modules/checkPlayer.js';
-import {startGame} from './modules//startGame.js';
+import {game} from './modules/game.js';
 import {choosePlayer} from './modules/choosePlayer.js';
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
         let playerExist = checkPlayer();
         console.log(playerExist);
         if (playerExist === true) {
-            startGame();
+            game();
         } else {
             choosePlayer();
         }
