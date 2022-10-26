@@ -25,13 +25,24 @@ export function game () {
         })
     };
 
-    function renderElements () {
+    function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min) + min)
+    }
+
+    function renderElements (area) {
+        let gameSize = area.getBoundingClientRect();
+        let elementSize = getRandom(30, 100);
         let element = document.createElement('div');
+        let maxTop = gameSize.height - elementSize;
+        let maxLeft = gameSize.width - elementSize;
+
         element.style.height = '80px';
         element.style.width = '80px';
         element.style.backgroundColor = 'black';
 
-        gameArea.append(element);
+
+        console.log(gameSize);
+        // gameArea.append(element);
     }
 
     function startGame (statusOfTheGame) {
@@ -60,7 +71,7 @@ export function game () {
             timeContainer.textContent = (time - 0.1).toFixed(1);
             gameStatus = true;
             startGame(gameStatus);
-            renderElements();
+            renderElements(gameArea);
         }
     }, 100);
 };
